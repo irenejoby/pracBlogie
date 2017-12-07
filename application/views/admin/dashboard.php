@@ -2,6 +2,11 @@
 
 
 <div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-6"><br><br>
+      <a href="<?= base_url('admin/add_article') ?>" class="btn btn-lg btn btn-outline-primary pull-right">Add Article</a>
+    </div>
+  </div>
   <table class="table">
     <thead>
       <th>Sr.No</th>
@@ -36,3 +41,7 @@
 
 
 <?php include_once('admin_footer.php') ?>
+
+<!-- line 7 with anchor tag, inside php tag, -->
+<!-- anchor('admin/add_article', 'Add Article', ['class'=>b'tn btn-primary', ]); -->
+<!-- first parameter=> controller/method, second parameter=> value inside button, third parameter=> -->
