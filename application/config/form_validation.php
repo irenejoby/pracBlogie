@@ -5,7 +5,7 @@ $config = [
                               [
                                 'field'=> 'title',
                                 'label'=> 'Article Title',
-                                'rules'=> 'required|alpha'
+                                'rules'=> 'required|alpha|trim'
                               ],
                               [
                                 'field'=> 'body',

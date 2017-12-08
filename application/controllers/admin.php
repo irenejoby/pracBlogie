@@ -10,15 +10,27 @@ class Admin extends MY_Controller{
   }
 
   public function add_article(){
+
     $this->load->view('admin/add_article');
+
   }
 
   public function store_article(){
-    $this->load->library('form_validation');
-    $this->form_validation->set_error_delimiters("<p class='text-primary'>","</p>");
-    if($this->form_validation->run('add_article_rules')){
+    // $this->load->library('form_validation');
+    // $this->form_validation->set_error_delimiters("<p class='text-primary'>","</p>");
+    if($this->form_validation->run('add_article_rules') == TRUE){
       $post = $this->input->post();
-      print_r($post); exit;
+      unset($post['submit']);
+      // print_r($post); exit;
+      $this->load->model('articlesmodel','articles');
+      if($this->articles->add_article($post)){
+        // insert successfully
+        echo "insert successfully";
+      }
+      else{
+        // insert failed;
+        echo "insert failed";
+      }
     }
     else{
       return redirect('admin/add_article');
